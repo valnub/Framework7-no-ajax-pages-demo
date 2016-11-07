@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='theme-color', content='#2196f3')
+    title My ajax pages test
+    link(rel='stylesheet', href='../node_modules/framework7/dist/css/framework7.material.css')
+    link(rel='stylesheet', href='../node_modules/framework7/dist/css/framework7.material.colors.css')
+  body
+    .views
+      .view.view-main
+        .pages.navbar-fixed
+          .page(data-page='page1')
+            include page1
+          .page.cached(data-page='page2')
+            include page2
+    script(src='../node_modules/framework7/dist/js/framework7.min.js')
+    script.
+      document.addEventListener('DOMContentLoaded', function () {
+        var f7app = new Framework7({
+          pushState:true
+        });
+        var mainView = f7app.addView('.view-main', {
+          domCache:true
+        });
+      });

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
+    <title>My ajax pages test</title>
+    <link rel="stylesheet" href="../node_modules/framework7/dist/css/framework7.material.css">
+    <link rel="stylesheet" href="../node_modules/framework7/dist/css/framework7.material.colors.css">
+  </head>
+  <body>
+    <div class="views">
+      <div class="view view-main">
+        <div class="pages navbar-fixed">
+          <div data-page="page1" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Page 1</div>
+              </div>
+            </div>
+            <div class="page-content">
+              <p>This is page1. <a href="#page2">Go to 2nd page</a></p>
+            </div>
+          </div>
+          <div data-page="page2" class="page cached">
+            <div class="navbar">
+              <div class="navbar-inner cached">
+                <div class="center">Page 2</div>
+              </div>
+            </div>
+            <div class="page-content">
+              <p>This is page2. <a href="#page1" class="back">Back to page 1</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../node_modules/framework7/dist/js/framework7.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var f7app = new Framework7({
+          pushState:true
+        });
+        var mainView = f7app.addView('.view-main', {
+          domCache:true
+        });
+      });
+    </script>
+  </body>
+</html>
