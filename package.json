@@ -9,6 +9,7 @@
   "author": "Timo Ernst",
   "license": "ISC",
   "dependencies": {
+    "framework7": "^1.5.0",
     "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
     "gulp-server-livereload": "^1.9.2"
